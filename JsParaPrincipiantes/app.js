@@ -1,43 +1,17 @@
-// Condicionales
+// Bucles
 
-let passwordDB = "pepe123";
+let count = 0;
 
-let input = "pepe123";
-
-let result5 = input == passwordDB;
-
-if(result5 == true)
+while(count < 50)
 {
-    console.log("login Correcto");
-}else
-{
-    console.log("contraseña incorrecta")
+    console.log(count);
+    count++;
 }
 
-let score = 70;
+let names = ["ryan", "joe", "john"];
 
-if(score > 30)
+for(let i= names.length - 1; i >= 0; i--)
 {
-    console.log("you need to practice more");
-}
-else if(score >15)
-{
-    console.log("Estas mejorando");
-}
-else{
-    console.log("you need to follow this tutorial");
+    console.log(names[i])
 }
 
-let typeCard = "cjvgc";
-
-switch(typeCard)
-{
-    case "Debid Card":
-        console.log("this is a debid card");
-        break;
-    case "credit Card":
-        console.log("This is a credit card");
-        break;
-    default:
-        console.log("No card");    
-}
