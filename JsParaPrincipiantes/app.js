@@ -1,17 +1,17 @@
-// Bucles
-
-let count = 0;
-
-while(count < 50)
+// Funciones
+function greeting(name)
 {
-    console.log(count);
-    count++;
+    console.log("Hello " + name);
 }
 
-let names = ["ryan", "joe", "john"];
+greeting("Estrella");
+greeting("Markus");
+greeting("Connor");
 
-for(let i= names.length - 1; i >= 0; i--)
+function add(n1, n2)
 {
-    console.log(names[i])
+    console.log(n1 + n2);
 }
 
+add(3, 2);
+add (100, 300);
