@@ -1,33 +1,13 @@
-//tipos de datos
-"Hello world" //string
-'Hello world' //string
-console.log('this is a string')
+// variables
+var nameuser = "john";
+let lastname = "carter";
 
-10000000//number
--2.3
-console.log(14.3)
+nameuser = "pepe";
 
-//boolean
-true
-false
-console.log(true)
+const PI = 3.1416;
 
-//array
-['joey', 'ryan', 'martha']
-[1, 2, 3]
-[true, false, true, false]
-console.log([1, 2, 3, 4])
+console.log(PI)
 
-//object
-
-{
-    "username": 'ryan',
-    "score": 70.4,
-    "hours": 14,
-    "proffesional": true
-}
-console.log({"username": "ryan",
-    "score": 70.4,
-    "hours": 14,
-    "proffesional": true
-});
+//camelcase
+let userName = "gordon";
+/* */
