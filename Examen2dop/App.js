@@ -1,18 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState, useEffect} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { ImageBackground, SafeAreaView, TextInput } from 'react-native-web';
+import { Alert, StyleSheet, Text, View } from 'react-native';
+import { Button, ImageBackground, SafeAreaView, ScrollView, TextInput } from 'react-native-web';
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
-  const[nombre, setNombre] = useState('');
-  const[carrera, setCarrera] = useState('');
-  const[biografia, setBiografia] = useState('');
-  const[correo, setCorreo] = useState('');
-  const[telefono, setTelefono] = useState('');
+  const [isDisabled, setIsDisabled] = useState(false);
 
+  const mostrarAlerta1 = () => {
+    alert('Se ha guardado con exito');
+  }
+ 
   const mostrarAlerta = () => {
-
+    alert('Desea guardar o cancelar');
+  }
+   const mostrarAlerta2 = () => {
+    alert('Se ha cancelado');
   }
 
    useEffect(() => {
@@ -33,15 +36,39 @@ export default function App() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <ImageBackground 
-      source={{uri: '',}}
+      source={{uri: 'https://wallpapercave.com/wp/wp3850825.jpg',}}
       style={styles.background}
       >
-    <View style={styles.container}>
-      <text style={styles.label}>Nombre completo</text>
+    <View style={styles.overlay}>
       
+     <text style={styles.tiltle}>PERFIL PERSONAL</text>
+      <text style={styles.label}>Estrella Marco Pérez</text>
+      <text style={styles.label}>Ingenieria en Tecnologías de la información e innovación digital</text>
+      <text style={styles.label}>Mi nombre es Estrella soy estudiante en la 
+        Universidad Politecnica de Querétaro, soy de Santiago Mexquititlan Barrio , Amealco, Querétaro,
+        y actualmente vivo en Ciudad Marquez
+      </text>
+      <text style={styles.label}>124050047@upq.edu.mx</text>
+      <text style={styles.label}>4481218681</text>
+      <Button 
+      title='Editar Perfil'
+      onPress={mostrarAlerta}
+      color='blue'
+      />
+      <Button 
+      title='Guardar'
+      onPress={mostrarAlerta1}
+      color='#a4daf5ff'
+      />
+      <Button 
+      title='Cancelar'
+      onPress={mostrarAlerta2}
+      color='#a4daf5ff'
+      />
     </View>
     </ImageBackground>
     </SafeAreaView>
+    
   );
 }
 
@@ -64,14 +91,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   overlay:{
-    backgroundColor: 'rgba(0,0,0,0.5',
+    backgroundColor: 'rgba(0,0,0,0.5)',
     padding:20,
     borderRadius: 10,
   },
 
-  title:{
-    fontSize: 28,
-    color: '#fff',
+  label:{
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fcfcfcff',
+    marginBottom:10,
+    textAlign: 'center',
+  },
+
+  tiltle:{
+    fontSize: 25,
+    color: '#fcfcfcff',
     marginBottom:10,
     textAlign: 'center',
   },
