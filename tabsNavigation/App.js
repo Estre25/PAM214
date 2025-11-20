@@ -30,7 +30,11 @@ export default function App() {
         tabBarActiveTintColor: 'gray',
         tabBarStyle:{
           paddingBottom: 5,
-          height: 60,
+          position: 'absolute',  // Permite posicionamiento flexible
+            bottom: 50,           // Ajusta esta distancia desde abajo
+            left: 50,
+            right: 50,
+            height: 100,
         },
       })}
       >
