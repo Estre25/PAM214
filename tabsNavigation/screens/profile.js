@@ -1,12 +1,23 @@
-import {View, Text, StyleSheet} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons'; 
 
-export default function Profile(){
+export default function Profile({ navigation }) { 
+
+    const handleDetallePress = () => {
+        navigation.navigate('Detalle'); 
+    };
+
     return(
         <View style={styles.container}>
             <View style={styles.iconRow}>
                 <Ionicons name="person-outline" size={28} color="green" />
                 <Text style={styles.title}>Perfil de usuario</Text>
+                <Pressable 
+                    style={[styles.button, styles.buttonDetalle]} 
+                    onPress={handleDetallePress} 
+                >
+                    <Text style={styles.buttonText}>Detalles de Usuario</Text>
+                </Pressable>
             </View>
         </View>
     );
@@ -14,20 +25,37 @@ export default function Profile(){
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
+        flex: 1,
         backgroundColor: '#fff',
-        justifyContent:'center',
+        justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
     },
     iconRow:{
         flexDirection: 'column',
-        alignItems:'center',
+        alignItems: 'center',
     },
     title:{
         fontSize: 22,
         fontWeight: 'bold',
-        marginLeft: 10,
+        marginTop: 10, // Agregué margen superior
+        marginBottom: 30, // Agregué margen inferior
         color: 'green',
+    },
+    button: {
+        paddingVertical: 12,
+        paddingHorizontal: 30,
+        borderRadius: 8,
+        marginTop: 20, // Agregué margen superior
+        width: '80%',
+        alignItems: 'center',
+    },
+    buttonText:{
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: '600',
+    },
+    buttonDetalle:{
+        backgroundColor: '#51a9dcff',
     },
 });
